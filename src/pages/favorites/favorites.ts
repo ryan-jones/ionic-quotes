@@ -3,7 +3,8 @@ import {
   IonicPage,
   NavController,
   NavParams,
-  ModalController
+  ModalController,
+  MenuController
 } from 'ionic-angular';
 import { Quote } from '../../app/data/quotes';
 import { QuotesService } from '../../services/quotes.service';
@@ -17,10 +18,9 @@ import { QuotePage } from '../quote/quote';
 export class FavoritesPage {
   quotes: Quote[];
   constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
     private quotesService: QuotesService,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private menuCtrl: MenuController
   ) {}
 
   ionViewWillEnter() {
