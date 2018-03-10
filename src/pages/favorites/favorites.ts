@@ -9,6 +9,7 @@ import {
 import { Quote } from '../../app/data/quotes';
 import { QuotesService } from '../../services/quotes.service';
 import { QuotePage } from '../quote/quote';
+import { SettingsService } from '../settings/settings.service';
 
 @IonicPage()
 @Component({
@@ -20,7 +21,8 @@ export class FavoritesPage {
   constructor(
     private quotesService: QuotesService,
     private modalCtrl: ModalController,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private settingsService: SettingsService
   ) {}
 
   ionViewWillEnter() {
@@ -41,4 +43,6 @@ export class FavoritesPage {
     this.quotesService.removeQuoteFromFavorites(quote);
     this.quotes = this.quotesService.getFavoriteQuotes();
   }
+
+  getBackground = () => this.settingsService.isAltBackground() ? 'altQuoteBackground' : 'quoteBackground';
 }
