@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  IonicPage,
-  NavController,
   NavParams,
   AlertController
 } from 'ionic-angular';
 import { Quote } from '../../app/data/quotes';
 import { QuotesService } from '../../services/quotes.service';
-@IonicPage()
 @Component({
   selector: 'page-quotes',
   templateUrl: 'quotes.html'
@@ -15,7 +12,6 @@ import { QuotesService } from '../../services/quotes.service';
 export class QuotesPage implements OnInit {
   private quoteGroup: any;
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
     private alertCtrl: AlertController,
     private quotesService: QuotesService

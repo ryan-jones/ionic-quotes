@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import {
-  IonicPage,
-  NavController,
   NavParams,
   ViewController
 } from 'ionic-angular';
 import { Quote } from '../../app/data/quotes';
 
-@IonicPage()
 @Component({
   selector: 'page-quote',
   templateUrl: 'quote.html'
@@ -15,7 +12,6 @@ import { Quote } from '../../app/data/quotes';
 export class QuotePage {
   private quote: Quote;
   constructor(
-    public navCtrl: NavController,
     public navParams: NavParams,
     private viewCtrl: ViewController
   ) {}
