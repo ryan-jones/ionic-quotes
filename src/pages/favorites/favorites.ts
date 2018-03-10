@@ -32,9 +32,13 @@ export class FavoritesPage {
     modal.present();
     modal.onDidDismiss((remove: boolean) => {
       if (remove) {
-        this.quotesService.removeQuoteFromFavorites(quote);
-        this.quotes = this.quotesService.getFavoriteQuotes();
+        this.removeFromFavorites(quote);
       }
     });
+  }
+
+  removeFromFavorites(quote: Quote) {
+    this.quotesService.removeQuoteFromFavorites(quote);
+    this.quotes = this.quotesService.getFavoriteQuotes();
   }
 }
